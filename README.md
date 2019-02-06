@@ -1,2 +1,2 @@
 # portfolio
-Site wolf-frontend.riu
+Site wolf-frontend.ru

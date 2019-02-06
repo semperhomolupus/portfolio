@@ -1,0 +1,64 @@
+.welcome {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  display: block;
+  width: 35vh;
+  height: 35vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo_wolf {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo_circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+@keyframes showLogoText {
+  0% {
+    opacity: 0;
+  }
+
+
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.logo_text {
+  display: block;
+  opacity: 0;
+  animation-delay: 1.2s;
+  animation-name: showLogoText;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  svg {
+    overflow: visible;
+  }
+}

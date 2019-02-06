@@ -41,8 +41,6 @@
     opacity: 0;
   }
 
-
-
   100% {
     opacity: 1;
   }
@@ -61,4 +59,17 @@
   svg {
     overflow: visible;
   }
+}
+
+.openBtn {
+  display: block;
+}
+
+.button {
+  display: block;
+  position: absolute;
+  bottom: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
 }

@@ -1,0 +1,43 @@
+@keyframes showTypedButton {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: #d3b67a;
+  background-color: #1e1e1e;
+  font-size: 16px;
+  width: 250px;
+  height: 50px;
+  border: none;
+  outline-color: #d3b67a;
+  cursor: pointer;
+  transition: 0.3s;
+  border-bottom: 1px solid #d3b67a;
+  border-top: 1px solid #d3b67a;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+
+  animation-delay: 2.1s;
+  animation-name: showTypedButton;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  &:hover {
+    box-shadow: 0 0 35px 7px rgba(#7cacc7, 0.3);
+    border-left-color: #d3b67a;
+    border-right-color: #d3b67a;
+  }
+}

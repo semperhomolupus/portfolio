@@ -8215,11 +8215,6 @@ react-svg@^7.2.6:
     "@tanem/svg-injector" "^2.1.4"
     prop-types "^15.6.2"
 
-react-video-cover@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-video-cover/-/react-video-cover-1.2.2.tgz#bf36d0171ed592f8c5c489bbdebfca4e7a05cfaa"
-  integrity sha512-llxs/UL14mEzGsQWEWPjBVfVTpLMS1gu6B1PfK0O621QL+rbRHxGHWnnVv3owb+oz/XOvcEy2ZhU8OStm+wFVQ==
-
 react@^16.8.0:
   version "16.8.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.0.tgz#8533f0e4af818f448a276eae71681d09e8dd970a"
@@ -9638,6 +9633,11 @@ type-is@~1.6.16:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"
+
+typed.js@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/typed.js/-/typed.js-2.0.10.tgz#70a1c1ad11965923bc9e52f851d1891b0ca1316f"
+  integrity sha512-tpK+LRm5FM2GAIWWWogbOc4QRlctS425Ef1PCQKbj/G9wyig+Zt+20eLruK7CBPR+DEl/ou4uSfpwRETCSmk4A==
 
 typedarray@^0.0.6:
   version "0.0.6"

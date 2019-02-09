@@ -1,0 +1,149 @@
+.block {
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px rgba(255,255,255,0.5);
+  border: 5px solid gray;
+  background-color: gray;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+
+}
+
+td {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 0;
+  background-color: gray;
+  background-image: url("./assets/ground.jpg");
+  background-size: cover;
+}
+
+.floor {
+  background-image: url("./assets/ground.jpg");
+  background-size: cover;
+}
+
+.wall {
+  background-image: url("./assets/wall.jpg");
+  background-size: cover;
+}
+
+.key {
+  background-image: url("./assets/key.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.player {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url("./assets/ninja.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.boat {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url("./assets/boat.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.door {
+  background-image: url("./assets/door.jpg"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.box {
+  background-image: url("./assets/box.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.tree {
+  background-image: url("./assets/tree.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.flower {
+  background-image: url("./assets/flower.png"), url("./assets/ground.jpg");
+  background-size: 60%, cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+
+.sand {
+  background-image: url("./assets/sand.jpg");
+  background-size:  cover;
+  background-repeat: no-repeat;
+}
+
+.river {
+  background-image: url("./assets/river.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.aboutGate {
+  background-image: url("./assets/aboutGate.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.portfolioGate {
+  background-image: url("./assets/portfolioGate.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+.contactsGate {
+  background-image: url("./assets/contactsGate.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+.exit {
+  background-image: url("./assets/exit.png"), url("./assets/ground.jpg");
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

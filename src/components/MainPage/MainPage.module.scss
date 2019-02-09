@@ -1,0 +1,59 @@
+.mainPage {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  min-height: 550px;
+  position: relative;
+}
+
+.ninja {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 150px;
+  width: 280px;
+  position: absolute;
+  bottom: 165px;
+  right:  50px;
+}
+
+.ninja_image {
+  display: block;
+  width: 25%;
+  padding: 15px;
+  border: 3px solid #d3b67a;
+  margin-right: 20px;
+  flex-grow: 0;
+  background-color: rgba(#fff, 10%);
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.ninja_title {
+  display: block;
+  color: #d3b67a;
+  font-size: 20px;
+
+}
+
+
+.ninja_descr {
+  display: block;
+  color: #fff;
+}
+
+
+.wasd {
+  display: block;
+  position: absolute;
+  bottom: 170px;
+  left: 70px;
+  width: 210px;
+
+  img {
+    max-width: 100%;
+  }
+}

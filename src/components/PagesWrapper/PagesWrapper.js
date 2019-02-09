@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import WelcomePage from '../WelcomePage/WelcomePage';
 import MainPage from '../MainPage/MainPage';
+import PortfolioPage from '../PortfolioPage/PortfolioPage';
 
 
 import styles from './PagesWrapper.module.scss'
@@ -16,6 +17,8 @@ export default class PagesWrapper extends Component {
                     {/*<WelcomePage/>*/}
 
                     <MainPage/>
+
+                    {/*<PortfolioPage/>*/}
                 </li>
             </ul>
 

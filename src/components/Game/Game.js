@@ -99,14 +99,14 @@ export default class Game extends Component {
     render() {
         const level = `
 █████████A██████████
-█TF.█TT.▼.█F..B█.T.█
-P.▼.║.F..██..F.║.▼.C
+█TF.█TT...█F..B█.T.█
+P...║.F..██..F.║...C
 █F..█..........█B.F█
-█..B█...╘.T███.█████
-███████.....█T...FB█
+█..B█.....T███.█████
+███████....╘█T...FB█
 █T..B███..███..F..B█
 RSS☺..F.....F......█
-R۩SS.....T.....B█.T█
+R۩SS.....T.....B█╘T█
 RRRR████████████████
 `
 
@@ -232,11 +232,18 @@ RRRR████████████████
         // console.log(getlevel)
 
         return (
-            <table className="block">
-                <tbody>
-                {generatedLevel}
-                </tbody>
-            </table>
+            <div className="wrapper">
+                <div className="arrows">
+                    <button className="arrowLeft">←</button>
+                    <button className="arrowTop">↑</button>
+                    <button className="arrowRight">→</button>
+                </div>
+                <table className="table">
+                    <tbody>
+                    {generatedLevel}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

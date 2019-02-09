@@ -5,12 +5,22 @@ import ninjaImg from './assets/ninja.webp';
 import wasdImg from './assets/wasd.png';
 import song from './assets/ministrelosity.mp3';
 
+
 export default class MainPage extends Component {
 
+    state = {
+         myAudio: new Audio
+    }
+
     startAudio() {
-        const myAudio = new Audio;
-        myAudio.src = song;
-        myAudio.play();
+        const audio = this.state.myAudio;
+        audio.src = song;
+        audio.play();
+
+
+    }
+    componentWillUnmount() {
+
     }
 
     render() {
@@ -29,7 +39,9 @@ export default class MainPage extends Component {
                         <span className={styles.arrowRight}>→</span>
                     </div>
 
-                    <Game/>
+                    <Game
+                        history={this.props.history}
+                    />
                 </div>
 
                 <div className={`${styles.block} ${styles.keyboard}`}>

@@ -8,8 +8,10 @@ export default class PortfolioPage extends Component {
     render() {
 
         return (
-            <div className={styles.block}>
+            <div className={styles.container}>
+                <ul>
 
+                </ul>
 
 
             </div>

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-
-import ProgressBar from '../ProgressBar/ProgressBar';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import WelcomePage from '../WelcomePage/WelcomePage';
 import PagesWrapper from '../PagesWrapper/PagesWrapper';
 import styles from './App.module.scss'
 
@@ -9,20 +9,16 @@ export default class App extends Component {
 
     render() {
 
-        const data = {
-            activePage: 0
-        }
 
         return (
-            <div className={styles.app}>
+            <Router>
+                <div className={styles.app}>
 
-                <PagesWrapper
-                    activePage={data.activePage}
-                />
-                <ProgressBar
-                    activePage={data.activePage}
-                />
-            </div>
+                    <Route path={'/'} exact component={WelcomePage}/>
+                    <Route path={'/:page'} component={PagesWrapper}/>
+
+                </div>
+            </Router>
         )
     }
 }

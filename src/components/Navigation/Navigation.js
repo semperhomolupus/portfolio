@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss'
 
 export default class Navigation extends Component {
@@ -9,9 +10,34 @@ export default class Navigation extends Component {
         return (
             <nav className={styles.nav}>
                 <ul className={styles.navList}>
-                    <li className={styles.navItmem}>Портфолио</li>
-                    <li className={styles.navItmem}>Обо мне</li>
-                    <li className={styles.navItmem}>Контакты</li>
+                    <li>
+                        <NavLink
+                            to={'/main'}
+                            className={styles.navItmem}
+                            activeClassName={styles.navItemActive}
+                        >Главная</NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={'/portfolio'}
+                            className={styles.navItmem}
+                            activeClassName={styles.navItemActive}
+                        >Портфолио</NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={'/about'}
+                            className={styles.navItmem}
+                            activeClassName={styles.navItemActive}
+                        >Обо мне</NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={'/contacts'}
+                            className={styles.navItmem}
+                            activeClassName={styles.navItemActive}
+                        >Обо мне</NavLink>
+                    </li>
                 </ul>
             </nav>
         )

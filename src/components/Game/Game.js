@@ -91,7 +91,7 @@ export default class Game extends Component {
             newPlace.classList.remove("portfolioGate");
 
 
-            alert("ПОБЕДА")
+            this.props.history.push('/portfolio')
         }
 
     }

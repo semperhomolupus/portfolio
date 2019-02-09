@@ -98,11 +98,11 @@ export default class Game extends Component {
 
     render() {
         const level = `
-█████████A██████████
-█TF.█TT...█F..B█.T.█
-P...║.F..██..F.║...C
+████████A███████████
+█TF.█TT█..█.F.B█.T.█
+P...║.F..███.F.║...C
 █F..█..........█B.F█
-█..B█.....T███.█████
+█..B█..F..T███.█████
 ███████....╘█T...FB█
 █T..B███..███..F..B█
 RSS☺..F.....F......█
@@ -233,11 +233,7 @@ RRRR████████████████
 
         return (
             <div className="wrapper">
-                <div className="arrows">
-                    <button className="arrowLeft">←</button>
-                    <button className="arrowTop">↑</button>
-                    <button className="arrowRight">→</button>
-                </div>
+
                 <table className="table">
                     <tbody>
                     {generatedLevel}

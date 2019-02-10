@@ -1,0 +1,16 @@
+.link a {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: 'Poiret One', cursive;
+  font-size: 70px;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: #d3b67a;
+  }
+}

@@ -1,12 +1,31 @@
 import React, {Component} from "react";
 import TypedEffectButton from '../TypedEffectButton/TypedEffectButton';
 import bgVideo from './assets/video.mp4';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import styles from './WelcomePage.module.scss'
 
-export default class WelcomePage extends Component {
+class WelcomePage extends Component {
+    constructor(props) {
+        super(props);
+        this.keyListener = this.keyListener.bind(this);
+    }
 
+    componentDidMount() {
+        console.log("WELCOME componentDidMount")
+        document.addEventListener("keydown", this.keyListener, false);
+    }
+
+    componentWillUnmount() {
+        console.log("WELCOME componentWillUnmount")
+        document.removeEventListener("keydown", this.keyListener);
+    }
+
+    keyListener(e) {
+        if (e.code === 'KeyY') {
+            this.props.history.push('/main')
+        }
+    }
 
     render() {
 
@@ -37,3 +56,5 @@ export default class WelcomePage extends Component {
         )
     }
 }
+
+export default withRouter(WelcomePage);

@@ -7,7 +7,11 @@ export default class ContactsPage extends Component {
     render() {
 
         return (
-            <div className={styles.progress}></div>
+            <div className={styles.container}>
+                <span className={styles.link}>
+                    <a href="mailto:whitebestnik@yandex.ru">whitebestnik@yandex.ru</a>
+                </span>
+            </div>
         )
     }
 }

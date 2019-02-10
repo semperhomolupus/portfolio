@@ -12,9 +12,47 @@
 
 .headerlLogo  {
   display: block;
-  width: 60px;
+  width: 180px;
   height:60px;
   position: fixed;
-  top: 40px;
-  left: 70px;
+  top: 20px;
+  left: 40px;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.audio {
+  display: block;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  right: 40px;
+  background-image: url("./assets/music.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-color: #fff;
+  background-position: center center;
+  font-size: 0;
+  border: 2px solid #7daec9;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  &::after {
+    display: block;
+    content: "Включить музыку";
+    position: absolute;
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+    color: #7daec9;
+    white-space: nowrap;
+    right: 70px;
+    top: 5px;
+  }
+
 }

@@ -2,12 +2,23 @@ import React, {Component} from "react";
 
 import MainPage from '../MainPage/MainPage';
 import PortfolioPage from '../PortfolioPage/PortfolioPage';
-// import Logo from '../Logo/Logo';
+import song from './assets/ministrelosity.mp3';
 import styles from './PagesWrapper.module.scss'
 import Navigation from "../Navigation/Navigation";
 
 export default class PagesWrapper extends Component {
 
+    state = {
+        myAudio: new Audio
+    }
+
+    startAudio() {
+        const audio = this.state.myAudio;
+        audio.src = song;
+        audio.play();
+
+
+    }
 
     render() {
 
@@ -18,9 +29,7 @@ export default class PagesWrapper extends Component {
         switch(this.props.match.url) {
 
             case '/main':
-                activePage = <MainPage
-                    history={this.props.history}
-                />
+                activePage = <MainPage/>
                 break;
 
             case '/portfolio':
@@ -33,9 +42,14 @@ export default class PagesWrapper extends Component {
             <div className={styles.pagesWrapper}>
                 <header>
                     <div className={styles.headerlLogo}>
-                        {/*<Logo/>*/}
+                        Wolf Frontend
                     </div>
                     <Navigation/>
+                    <button
+                        onClick={this.startAudio.bind(this)}
+                        className={styles.audio}>
+                        Старт аудио
+                    </button>
                 </header>
 
                 {activePage}

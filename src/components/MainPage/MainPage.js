@@ -3,34 +3,20 @@ import styles from './MainPage.module.scss'
 import Game from '../Game/Game';
 import ninjaImg from './assets/ninja.webp';
 import wasdImg from './assets/wasd.png';
-import song from './assets/ministrelosity.mp3';
+
 
 
 export default class MainPage extends Component {
 
-    state = {
-         myAudio: new Audio
-    }
-
-    startAudio() {
-        const audio = this.state.myAudio;
-        audio.src = song;
-        audio.play();
 
 
-    }
-    componentWillUnmount() {
-
-    }
 
     render() {
 
         return (
             <div className={styles.mainPage}>
 
-                <button
-                    onClick={this.startAudio.bind(this)}
-                    className={styles.audio}>Старт аудио</button>
+
 
                 <div className={styles.gameWrapper}>
                     <div className={styles.arrows}>
@@ -39,14 +25,12 @@ export default class MainPage extends Component {
                         <span className={styles.arrowRight}>→</span>
                     </div>
 
-                    <Game
-                        history={this.props.history}
-                    />
+                    <Game/>
                 </div>
 
                 <div className={`${styles.block} ${styles.keyboard}`}>
                     <div className={styles.block_image}>
-                        <img src={wasdImg} alt=""/>
+                        <img src={wasdImg} alt="WASD"/>
                     </div>
                     <div className={styles.block_content}>
                         <span className={styles.block_title}>

@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import styles from './Game.scss'
+import {withRouter} from "react-router-dom";
+import './Game.scss'
 
-export default class Game extends Component {
+class Game extends Component {
 
     constructor(props) {
         super(props);
@@ -19,6 +20,7 @@ export default class Game extends Component {
     }
 
     componentDidMount(){
+        console.log("GAME componentDidMount")
         document.addEventListener("keydown", this.keyListener, false);
         const player = document.querySelector(".player");
         const playerRow = player.dataset.row;
@@ -32,7 +34,10 @@ export default class Game extends Component {
         });
     }
 
-
+    componentWillUnmount() {
+        console.log("GAME componentWillUnmount")
+        document.removeEventListener("keydown", this.keyListener);
+    }
 
     keyListener(e) {
         switch(e.code) {
@@ -243,3 +248,6 @@ RRRR████████████████
         );
     }
 }
+
+
+export default withRouter(Game);

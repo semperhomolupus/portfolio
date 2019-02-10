@@ -11,14 +11,10 @@ export default class PortfolioPage extends Component {
 
         return (
             <div className={styles.container}>
-
                 <div className={styles.ninja}>
                     <IconNinja/>
-
                     <Link to={'/main'} className={styles.return}>Вернуться »</Link>
                 </div>
-
-
                 <ul className={styles.examples}>
                     <li className={styles.example}>
                         <img src="https://2ch.hk//hw/src/3277376/15446283802060.jpg"  className={styles.image} alt=""/>
@@ -48,8 +44,6 @@ export default class PortfolioPage extends Component {
                         <img src="https://www.thesprucepets.com/thmb/qPHlAlsuW6QfqCSmJA3pXg8PNYA=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/185939148-56a111b03df78cafdaa914ed.jpg"  className={styles.image} alt=""/>
                     </li>
                 </ul>
-
-
             </div>
         )
     }

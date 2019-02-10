@@ -1,11 +1,14 @@
 import React, {Component} from "react";
-
 import MainPage from '../MainPage/MainPage';
 import PortfolioPage from '../PortfolioPage/PortfolioPage';
-import song from './assets/ministrelosity.mp3';
-import styles from './PagesWrapper.module.scss'
+import AboutPage from '../AboutPage/AboutPage';
+import ContactsPage from '../ContactsPage/ContactsPage';
 import Navigation from "../Navigation/Navigation";
 import {Link} from 'react-router-dom';
+
+import song from './assets/ministrelosity.mp3';
+import styles from './PagesWrapper.module.scss'
+
 
 export default class PagesWrapper extends Component {
 
@@ -35,6 +38,14 @@ export default class PagesWrapper extends Component {
 
             case '/portfolio':
                 activePage = <PortfolioPage/>
+                break;
+
+            case '/about':
+                activePage = <AboutPage/>
+                break;
+
+            case '/contacts':
+                activePage = <ContactsPage/>
                 break;
 
         }

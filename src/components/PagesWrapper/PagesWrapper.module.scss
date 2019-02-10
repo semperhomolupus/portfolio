@@ -10,6 +10,12 @@
   background-size: cover;
 }
 
+.header {
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
 .headerlLogo  {
   display: block;
   width: 180px;
@@ -21,6 +27,12 @@
   font-size: 24px;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: #7daec9;
+  }
 }
 
 .audio {
@@ -29,7 +41,6 @@
   width: 45px;
   height: 45px;
   position: absolute;
-  z-index: 10;
   top: 20px;
   right: 40px;
   background-image: url("./assets/music.png");

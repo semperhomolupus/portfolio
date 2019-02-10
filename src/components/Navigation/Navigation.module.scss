@@ -40,9 +40,16 @@
   border-left: 1px solid #d3b67a;
   border-right: 1px solid #d3b67a;
 
+  &:hover {
+    background-color: lighten(#1e1e1e, 10%);
+  }
 }
 
 .navItemActive {
   color: #1e1e1e;
   background-color: #d3b67a;
+
+  &:hover {
+    background-color: #d3b67a;
+  }
 }

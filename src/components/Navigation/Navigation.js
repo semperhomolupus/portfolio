@@ -36,7 +36,7 @@ export default class Navigation extends Component {
                             to={'/contacts'}
                             className={styles.navItmem}
                             activeClassName={styles.navItemActive}
-                        >Обо мне</NavLink>
+                        >Контакты</NavLink>
                     </li>
                 </ul>
             </nav>

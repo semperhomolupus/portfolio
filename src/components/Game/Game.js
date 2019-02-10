@@ -92,11 +92,16 @@ class Game extends Component {
             door.classList.remove("door")
         }
 
+        if (newPlace.classList.contains("aboutGate")) {
+            this.props.history.push('/about')
+        }
+
         if (newPlace.classList.contains("portfolioGate")) {
-            newPlace.classList.remove("portfolioGate");
-
-
             this.props.history.push('/portfolio')
+        }
+
+        if (newPlace.classList.contains("contactsGate")) {
+            this.props.history.push('/contacts')
         }
 
     }

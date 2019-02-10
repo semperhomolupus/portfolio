@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import TypedEffectButton from '../TypedEffectButton/TypedEffectButton';
 import bgVideo from './assets/video.mp4';
-import styles from './WelcomePage.module.scss'
-import Logo from '../Logo/Logo';
 import {Link} from 'react-router-dom';
+import Logo from '../Logo/Logo';
+import styles from './WelcomePage.module.scss'
 
 export default class WelcomePage extends Component {
 

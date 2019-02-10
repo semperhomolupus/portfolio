@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import styles from './MainPage.module.scss'
 import Game from '../Game/Game';
-import ninjaImg from './assets/ninja.webp';
+import IconNinja from '../IconNinja/IconNinja';
 import wasdImg from './assets/wasd.png';
-
-
 
 export default class MainPage extends Component {
 
@@ -24,7 +22,6 @@ export default class MainPage extends Component {
                         <span className={styles.arrowTop}>↑</span>
                         <span className={styles.arrowRight}>→</span>
                     </div>
-
                     <Game/>
                 </div>
 
@@ -43,9 +40,7 @@ export default class MainPage extends Component {
                 </div>
 
                 <div className={`${styles.block} ${styles.ninja}`}>
-                    <div className={styles.block_image}>
-                        <img src={ninjaImg} alt="Frontend Ninja"/>
-                    </div>
+                    <IconNinja/>
                     <div className={styles.block_content}>
                         <span className={styles.block_title}>
                             Frontend Ninja!
@@ -54,7 +49,6 @@ export default class MainPage extends Component {
                             Это ты!
                         </span>
                     </div>
-
                 </div>
             </div>
         )

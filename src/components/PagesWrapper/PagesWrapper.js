@@ -5,6 +5,7 @@ import PortfolioPage from '../PortfolioPage/PortfolioPage';
 import song from './assets/ministrelosity.mp3';
 import styles from './PagesWrapper.module.scss'
 import Navigation from "../Navigation/Navigation";
+import {Link} from 'react-router-dom';
 
 export default class PagesWrapper extends Component {
 
@@ -40,10 +41,10 @@ export default class PagesWrapper extends Component {
 
         return (
             <div className={styles.pagesWrapper}>
-                <header>
-                    <div className={styles.headerlLogo}>
+                <header className={styles.header}>
+                    <Link to={'/'} className={styles.headerlLogo}>
                         Wolf Frontend
-                    </div>
+                    </Link>
                     <Navigation/>
                     <button
                         onClick={this.startAudio.bind(this)}

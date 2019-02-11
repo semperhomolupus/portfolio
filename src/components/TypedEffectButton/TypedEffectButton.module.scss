@@ -1,10 +1,12 @@
 @keyframes showTypedButton {
   0% {
     opacity: 0;
+    visibility: hidden;
   }
 
   100% {
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -34,11 +36,15 @@
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   opacity: 0;
+  visibility: hidden;
   text-decoration: none;
+  pointer-events: all;
+
 
   &:hover {
     box-shadow: 0 0 35px 7px rgba(#7cacc7, 0.3);
     border-left-color: #d3b67a;
     border-right-color: #d3b67a;
+
   }
 }

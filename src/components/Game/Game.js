@@ -40,22 +40,18 @@ class Game extends Component {
     }
 
     keyListener(e) {
-        switch(e.code) {
-            case "KeyW":
-                this.movePlayer(+this.state.player.row - 1, false);
-                break;
-            case "KeyS":
-                this.movePlayer(+this.state.player.row + 1, false);
-                break;
-            case "KeyD":
-                this.movePlayer(false, +this.state.player.column + 1);
-                break;
-            case "KeyA":
-                this.movePlayer(false, +this.state.player.column - 1);
-                break;
-            default:
-                return false;
+        const keyCode = e.code;
+
+        if (keyCode === "KeyW" || keyCode === "ArrowUp") {
+            this.movePlayer(+this.state.player.row - 1, false);
+        } else if (keyCode === "KeyS" || keyCode === "ArrowDown") {
+            this.movePlayer(+this.state.player.row + 1, false);
+        } else if (keyCode === "KeyD" || keyCode === "ArrowRight") {
+            this.movePlayer(false, +this.state.player.column + 1);
+        } else if (keyCode === "KeyA" || keyCode === "ArrowLeft") {
+            this.movePlayer(false, +this.state.player.column - 1);
         }
+
     }
 
     movePlayer(row, column) {

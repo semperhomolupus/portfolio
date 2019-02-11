@@ -1,0 +1,23 @@
+AddDefaultCharset utf-8
+DirectoryIndex index.html index.php
+Header set Access-Control-Allow-Credentials "true"
+php_value upload_max_filesize 8M
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_URI} !^/api/?
+    RewriteCond %{REQUEST_URI} !^/yml/?
+    RewriteCond %{REQUEST_URI} !^/tools/?
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) index.html [L,QSA]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) index.php?\$1 [L,QSA]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

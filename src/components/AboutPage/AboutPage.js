@@ -9,7 +9,10 @@ export default class AboutPage extends Component {
 
         return (
             <PagesWrapper>
-                <PageContainer haikuType={1}>
+                <PageContainer
+                    haikuType={1}
+                    title={'Front-end one love'}
+                >
                     <div className={styles.container}>
 
 

@@ -12,7 +12,10 @@ export default class PortfolioPage extends Component {
 
         return (
             <PagesWrapper>
-                <PageContainer haikuType={2}>
+                <PageContainer
+                    haikuType={2}
+                    title={'Лучшая работа - хобби'}
+                >
                     <div className={styles.container}>
 
                         <ul className={styles.examples}>

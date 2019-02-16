@@ -44,25 +44,23 @@ export default class PageContainer extends Component {
 
         return (
                 <div className={styles.container}>
-                    {/*Тут будет выход*/}
                     <aside className={styles.aside}>
                         <div className={styles.ninja}>
                             <IconNinja/>
                             <Link to={'/main'} className={styles.return}>« Вернуться</Link>
                         </div>
-
                         <div className={styles.haiku}>
                             {text}
                             <img className={styles.haiku_img} src={image} alt=""/>
                         </div>
-
                     </aside>
 
                     <main className={styles.content}>
-                        {this.props.children}
+                        <h1 className={styles.title}>{this.props.title}</h1>
+                        <div className={styles.content_wrapper}>
+                            {this.props.children}
+                        </div>
                     </main>
-
-
 
                 </div>
         )

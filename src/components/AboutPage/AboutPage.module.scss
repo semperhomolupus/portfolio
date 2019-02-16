@@ -1,7 +1,101 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-gap: 50px;
+.AboutPage {
+  display: block;
+  padding-left: 10px;
 
+  @media (min-width: 1440px) {
+    padding-left: 60px;
+  }
 }
 
+.AboutPage_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.AboutPage_photo {
+  display: block;
+  width: 150px;
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.AboutPage_image {
+  max-width: 100%;
+  border: 2px solid #7daec9;
+}
+
+.AboutPage_descr {
+  display: block;
+  padding-right: 40px;
+
+  p {
+    display: block;
+    font-size: 14px;
+
+    @media (min-width: 1440px) {
+      font-size: 17px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  .colored {
+    color: #d3b67a;
+  }
+}
+
+.AboutPage_skills_box {
+  display: block;
+  width: 200px;
+}
+
+.AboutPage_skills_title {
+  display: block;
+  font-family: 'Neucha', cursive;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.AboutPage_skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.AboutPage_skills_list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.AboutPage_skills_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+  height: 20px;
+
+  @media (min-width: 1440px) {
+    height: 30px;
+  }
+
+  img {
+    width: 20px;
+    max-height: 20px;
+    margin-right: 10px;
+
+    @media (min-width: 1440px) {
+      width: 30px;
+      max-height: 30px;
+      margin-right: 10px;
+    }
+  }
+}

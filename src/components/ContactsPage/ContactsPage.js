@@ -37,25 +37,22 @@ export default class ContactsPage extends Component {
                             
                             <ul className={styles.socials}>
                                 <li>
-                                    <a href="#" className={`${styles.social} ${styles.vk}`}>
+                                    <a href="https://vk.com/semperhomolupus" rel="noopener noreferrer" target="_blank" className={`${styles.social} ${styles.vk}`}>
                                         Вконтакте
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={`${styles.social} ${styles.linkedin}`}>
+                                    <a href="https://www.linkedin.com/in/egor-dyachenko/" rel="noopener noreferrer" target="_blank" className={`${styles.social} ${styles.linkedin}`}>
                                         Linkedin
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className={`${styles.social} ${styles.facebook}`}>
+                                    <a href="https://www.facebook.com/egor.dyachenko.37" rel="noopener noreferrer" target="_blank" className={`${styles.social} ${styles.facebook}`}>
                                         Facebook
                                     </a>
                                 </li>
                             </ul>
-                            <div className={styles.ContactsPage_descr_ps}>
-                                From Saint-Petersburg with love  <br/>
-                                Egor Dyachenko
-                            </div>
+
                         </div>
                     </div>
                 </PageContainer>

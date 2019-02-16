@@ -64,18 +64,3 @@
   }
 }
 
-.ContactsPage_descr_ps {
-  display: block;
-  width: 200px;
-  margin-left: auto;
-  margin-top: 20px;
-  margin-right: -40px;
-  font-size: 14px;
-  text-align: right;
-  color: rgba(#d3b67a, 0.4);
-
-  @media (min-width: 1440px) {
-    margin-top: 60px;
-    margin-right: -210px;
-  }
-}

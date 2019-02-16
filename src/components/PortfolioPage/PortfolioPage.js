@@ -76,7 +76,7 @@ export default class PortfolioPage extends Component {
             <PagesWrapper>
                 <PageContainer
                     haikuType={2}
-                    title={'Лучшая работа - хобби'}
+                    title={'Мое хобби, моя работа'}
                 >
                     <div className={styles.PortfolioPage}>
                         <div className={styles.PortfolioPage_slider}>

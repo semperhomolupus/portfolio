@@ -7,9 +7,6 @@ import imageType2 from './assets/2.png';
 import imageType3 from './assets/3.png';
 
 export default class PageContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         let image;
@@ -40,6 +37,10 @@ export default class PageContainer extends Component {
                             Рыбы в мелкой воде.
                         </span>;
                 break;
+            default:
+                image = null;
+                text = null;
+                break;
         }
 
         return (
@@ -59,6 +60,10 @@ export default class PageContainer extends Component {
                         <h1 className={styles.title}>{this.props.title}</h1>
                         <div className={styles.content_wrapper}>
                             {this.props.children}
+                        </div>
+                        <div className={styles.copyright}>
+                            From Saint-Petersburg with love  <br/>
+                            Egor Dyachenko, 2019
                         </div>
                     </main>
 

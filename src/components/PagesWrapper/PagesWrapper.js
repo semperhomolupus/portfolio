@@ -1,55 +1,25 @@
 import React, {Component} from "react";
-import MainPage from '../MainPage/MainPage';
-import PortfolioPage from '../PortfolioPage/PortfolioPage';
-import AboutPage from '../AboutPage/AboutPage';
-import ContactsPage from '../ContactsPage/ContactsPage';
+
 import Navigation from "../Navigation/Navigation";
 import {Link} from 'react-router-dom';
 
 import song from './assets/ministrelosity.mp3';
-import styles from './PagesWrapper.module.scss'
+import styles from './PagesWrapper.module.scss';
 
 
 export default class PagesWrapper extends Component {
 
     state = {
-        myAudio: new Audio
-    }
+        myAudio: new Audio()
+    };
 
     startAudio() {
         const audio = this.state.myAudio;
         audio.src = song;
         audio.play();
-
-
     }
 
     render() {
-
-        let activePage = null;
-        console.log(this.props.match)
-
-
-        switch(this.props.match.url) {
-
-            case '/main':
-                activePage = <MainPage/>
-                break;
-
-            case '/portfolio':
-                activePage = <PortfolioPage/>
-                break;
-
-            case '/about':
-                activePage = <AboutPage/>
-                break;
-
-            case '/contacts':
-                activePage = <ContactsPage/>
-                break;
-
-        }
-
         return (
             <div className={styles.pagesWrapper}>
                 <header className={styles.header}>
@@ -64,7 +34,7 @@ export default class PagesWrapper extends Component {
                     </button>
                 </header>
 
-                {activePage}
+                {this.props.children}
             </div>
 
         )

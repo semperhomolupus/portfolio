@@ -1,0 +1,120 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+
+  width: 1400px;
+  height: 620px;
+  padding: 30px;
+  background-color: rgba(#1e1e1e, 0.95);
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #d3b67a;
+}
+
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 200px;
+  margin-right: 60px;
+}
+
+.ninja {
+  display: block;
+}
+
+.main {
+  color: #fff;
+  font-size: 18px;
+}
+
+@keyframes arrowsEffect {
+  0% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+.return {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #d3b67a;
+
+
+  background-color: #1e1e1e;
+  font-size: 16px;
+  line-height: 1;
+  width: 115px;
+  height: 50px;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: 0.3s;
+  border-bottom: 1px solid #d3b67a;
+  border-top: 1px solid #d3b67a;
+  border-left: 1px solid #d3b67a;
+  border-right: 1px solid #d3b67a;
+  position: relative;
+  outline: none;
+
+  &:hover {
+    background-color: lighten(#1e1e1e, 10%);
+  }
+
+  &::after {
+    display: block;
+    content: "↑";
+    position: absolute;
+    bottom: -50px;
+    background: none;
+    color: #fff;
+    font-size: 40px;
+    border: none;
+    pointer-events: none;
+    outline: none;
+    opacity: 0.5;
+    transition: 0.3s;
+    animation-name: arrowsEffect;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+
+.haiku {
+  display: block;
+  position: relative;
+}
+
+.haiku_text {
+  display: block;
+
+  color: rgba(#fff, 0.8);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.haiku_img {
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  right: -90px;
+}

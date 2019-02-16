@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import styles from './ContactsPage.module.scss'
+import PagesWrapper from "../PagesWrapper/PagesWrapper";
+import PageContainer from "../PageContainer/PageContainer";
+import styles from './ContactsPage.module.scss';
 
 export default class ContactsPage extends Component {
 
@@ -7,11 +9,13 @@ export default class ContactsPage extends Component {
     render() {
 
         return (
-            <div className={styles.container}>
-                <span className={styles.link}>
-                    <a href="mailto:whitebestnik@yandex.ru">whitebestnik@yandex.ru</a>
-                </span>
-            </div>
+            <PagesWrapper>
+                <PageContainer haikuType={3}>
+                    <div className={styles.container}>
+
+                    </div>
+                </PageContainer>
+            </PagesWrapper>
         )
     }
 }

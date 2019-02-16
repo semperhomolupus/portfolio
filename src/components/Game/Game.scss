@@ -8,13 +8,18 @@
 }
 
 td {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   padding: 0;
   font-size: 0;
   background-color: #5c9c46;
   background-image: url("./assets/ground.jpg");
   background-size: cover;
+
+  @media (min-width: 1440px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .floor {

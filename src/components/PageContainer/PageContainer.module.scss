@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: stretch;
 
-  width: 1400px;
-  height: 620px;
+  width: 1140px;
+  height: 520px;
   padding: 30px;
   background-color: rgba(#1e1e1e, 0.95);
   box-sizing: border-box;
@@ -17,6 +17,12 @@
   transform: translate(-50%, -50%);
   border: 2px solid #d3b67a;
   color: #fff;
+
+
+  @media (min-width: 1440px) {
+    width: 1400px;
+    height: 620px;
+  }
 }
 
 
@@ -25,9 +31,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: 200px;
-  margin-right: 80px;
+  width: 150px;
+  margin-right: 100px;
   flex-shrink: 0;
+
+  @media (min-width: 1440px) {
+    width: 200px;
+    margin-right: 80px;
+  }
 }
 
 .ninja {
@@ -110,8 +121,12 @@
   display: block;
 
   color: rgba(#fff, 0.8);
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
+
+  @media (min-width: 1440px) {
+    font-size: 14px;
+  }
 }
 
 .haiku_img {
@@ -131,8 +146,12 @@
   text-align: center;
   margin-left: -200px;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #fff;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
+
+  @media (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
 }

@@ -11,12 +11,19 @@
   height: 100%;
 
   grid-gap: 5px;
-  grid-template-columns: 18vw 18vw 18vw;
-  grid-template-rows: 20vh 20vh 20vh;
+
+
+  grid-template-columns: 16vw 16vw 16vw;
+  grid-template-rows: 18vh 18vh 18vh;
 
   padding: 0;
   margin: 0;
   list-style: none;
+
+  @media (min-width: 1440px)  {
+    grid-template-columns: 18vw 18vw 18vw;
+    grid-template-rows: 20vh 20vh 20vh;
+  }
 }
 
 .example {

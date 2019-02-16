@@ -9,6 +9,12 @@
   margin: 0 auto;
   margin-top: 50px;
   font-size: 18px;
+
+  .colored {
+    display: block;
+    color: #d3b67a;
+  }
+
 }
 
 .socials {
@@ -17,13 +23,17 @@
   justify-content: center;
   padding: 0;
   margin: 0;
-  margin-top: 80px;
+  margin-top: 30px;
   list-style: none;
 
   li {
     &:not(:last-child) {
       margin-right: 20px;
     }
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 80px;
   }
 }
 
@@ -58,9 +68,14 @@
   display: block;
   width: 200px;
   margin-left: auto;
-  margin-top: 60px;
-  margin-right: -250px;
+  margin-top: 20px;
+  margin-right: -120px;
   font-size: 14px;
   text-align: right;
   color: rgba(#d3b67a, 0.4);
+
+  @media (min-width: 1440px) {
+    margin-top: 60px;
+    margin-right: -250px;
+  }
 }

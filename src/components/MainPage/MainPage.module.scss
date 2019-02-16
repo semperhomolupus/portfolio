@@ -9,20 +9,30 @@
 
 
 .ninja {
-  height: 150px;
+  height: auto;
   width: 280px;
   position: absolute;
-  bottom: 90px;
-  right:  60px;
+  bottom: 40px;
+  right:  20px;
 
+
+  @media (min-width: 1440px) {
+    bottom: 50px;
+    right:  60px;
+  }
 }
 
 .keyboard {
-  height: 140px;
+  height: auto;
   width: 320px;
   position: absolute;
-  bottom: 95px;
-  left:  50px;
+  left: 20px;
+  bottom: 40px;
+
+  @media (min-width: 1440px) {
+    left:  50px;
+    bottom: 55px;
+  }
 }
 
 .block {
@@ -76,9 +86,10 @@
 .gameWrapper {
   display: block;
   position: absolute;
-  top: 52%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 25px;
   box-shadow: 0 0 200px rgba(255,255,255,0.3);
   border: 5px solid #d3b67a;
   background-color: #5c9c46;

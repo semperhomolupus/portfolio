@@ -2,7 +2,7 @@
   display: block;
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   list-style: none;
   background-image: url("./assets/background.jpg");
@@ -22,7 +22,7 @@
   height:60px;
   position: absolute;
   top: 35px;
-  left: 95px;
+  left: 55px;
   color: #fff;
   font-size: 24px;
   font-family: 'Poiret One', cursive;
@@ -33,6 +33,10 @@
   &:hover {
     color: #7daec9;
   }
+
+  @media (min-width: 1440px) {
+    left: 95px;
+  }
 }
 
 .audio {
@@ -42,7 +46,7 @@
   height: 45px;
   position: absolute;
   top: 30px;
-  right: 95px;
+  right: 55px;
   background-image: url("./assets/music.png");
   background-repeat: no-repeat;
   background-size: 55%;
@@ -69,5 +73,9 @@
 
   &:hover::after {
     color: #7daec9;
+  }
+
+  @media (min-width: 1440px) {
+    right: 95px;
   }
 }

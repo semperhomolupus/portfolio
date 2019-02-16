@@ -4,14 +4,13 @@
 
 .ContactsPage_descr {
   display: block;
-  width: 790px;
-  padding-right: 150px;
+  width: 650px;
+  padding-right: 100px;
   margin: 0 auto;
   margin-top: 50px;
   font-size: 18px;
 
   .colored {
-    display: block;
     color: #d3b67a;
   }
 
@@ -23,6 +22,7 @@
   justify-content: center;
   padding: 0;
   margin: 0;
+  padding-right: 90px;
   margin-top: 30px;
   list-style: none;
 
@@ -33,7 +33,7 @@
   }
 
   @media (min-width: 1440px) {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 }
 

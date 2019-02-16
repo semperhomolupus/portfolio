@@ -1,67 +1,101 @@
-.container {
-  display: block;
-
-
-}
-
-
-
-.examples {
-  display: grid;
-  height: 100%;
-
-  grid-gap: 5px;
-
-
-  grid-template-columns: 16vw 16vw 16vw;
-  grid-template-rows: 18vh 18vh 18vh;
-
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  @media (min-width: 1440px)  {
-    grid-template-columns: 18vw 18vw 18vw;
-    grid-template-rows: 20vh 20vh 20vh;
-  }
-}
-
-.example {
+.PortfolioPage {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: gray;
-  overflow: hidden;
-  position: relative;
-  transition: 0.3s;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 50px;
 
-  &::after {
-    content: "MEOW";
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 24px;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-    opacity: 0;
-    transition: 0.3s;
+}
+
+.PortfolioPage_slider {
+  display: block;
+  width: 350px;
+  margin-top: 15px;
+  margin-right: 40px;
+
+  @media (min-width: 1440px) {
+    width: 400px;
+    margin-right: 60px;
   }
 
-  &:hover {
-    filter: grayscale(1);
+  & > div {
+    padding-bottom: 10px;
+  }
 
-    &::after {
-      opacity: 1;
-    }
+  li button:before {
+    color: #fff !important;
+  }
+
+}
+
+.PortfolioPage_seeBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #d3b67a;
+  background-color: #1e1e1e;
+  font-size: 16px;
+  line-height: 1;
+  width: 175px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-bottom: 1px solid #d3b67a;
+  border-top: 1px solid #d3b67a;
+  border-left: 1px solid #d3b67a;
+  border-right: 1px solid #d3b67a;
+  position: relative;
+  outline: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #d3b67a;
+    background-color: #383838;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 70px;
   }
 }
 
-.image {
+.PortfolioPage_content {
   display: block;
-  object-fit: cover;
-  max-width: 100%;
+}
 
+.PortfolioPage_title {
+  display: block;
+
+  font-size: 27px;
+  margin-top: 0;
+  color: #d3b67a;
+}
+
+.PortfolioPage_info {
+  display: block;
+  width: 400px;
+  font-size: 18px;
+}
+
+div {
+  outline: none !important;
+}
+
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+.PortfolioPage_techologies {
+  display: block;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #7daec9;
 }

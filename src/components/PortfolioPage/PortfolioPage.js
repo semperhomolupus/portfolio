@@ -1,14 +1,76 @@
 import React, {Component} from "react";
 import PagesWrapper from "../PagesWrapper/PagesWrapper";
 import PageContainer from "../PageContainer/PageContainer";
-import IconNinja from '../IconNinja/IconNinja';
-import {Link} from 'react-router-dom';
-import styles from './PortfolioPage.module.scss'
+import styles from './PortfolioPage.module.scss';
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.scss";
+import "slick-carousel/slick/slick-theme.scss";
+
+import slide1 from './assets/slide-1.jpg';
+import slide2 from './assets/slide-2.jpg';
+import slide3 from './assets/slide-3.jpg';
+import slide4 from './assets/slide-4.jpg';
+import slide5 from './assets/slide-5.jpg';
 
 export default class PortfolioPage extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            activeSlide: 0
+        }
+    }
 
     render() {
+        let settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            afterChange: (index) => {
+                this.setState({
+                    activeSlide: index
+                })
+            }
+        };
+
+        const slides = [
+            {
+                title: "Лендинг Soulvibes",
+                descr: "Лендинг с настоящим с медиа-плеером! Сделал его еще давным давно за вечерок, а до сих пор глаз радует. Послушайте Skillet, пока изучаете работу :)",
+                link: "http://wolf-frontend.ru/p/1/",
+                technologies: "HTML, CSS, JavaScript"
+            },
+            {
+                title: "Портал ТИАП",
+                descr: "Транспортно-информационный портал, верстка главной страницы портала.",
+                link: "https://semperhomolupus.github.io/tiap/",
+                technologies: "CSS"
+            },
+            {
+                title: "Сайт компании Panakeia",
+                descr: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda deserunt distinctio eaque itaque molestias nam necessitatibus quas recusandae repellat, sunt totam vel voluptas voluptates voluptatibus!",
+                link: "",
+                technologies: "ХЗ"
+            },
+            {
+                title: "Многостраничный сайт Афродита",
+                descr: "Сайт вымышленного фитнес-клуба. Псс, только не говорите им, что их не существует ;)",
+                link: "",
+                technologies: "HTML"
+            },
+            {
+                title: "Лендинг компании Lorem",
+                descr: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda deserunt distinctio eaque itaque molestias nam necessitatibus quas recusandae repellat, sunt totam vel voluptas voluptates voluptatibus! Amet delectus et quam.",
+                link: "https://semperhomolupus.github.io/loremSite/",
+                technologies: "HTML, jQuery"
+            }
+        ];
+
+        let slide = slides[this.state.activeSlide];
+
 
         return (
             <PagesWrapper>
@@ -16,37 +78,31 @@ export default class PortfolioPage extends Component {
                     haikuType={2}
                     title={'Лучшая работа - хобби'}
                 >
-                    <div className={styles.container}>
+                    <div className={styles.PortfolioPage}>
+                        <div className={styles.PortfolioPage_slider}>
+                            <Slider {...settings}>
+                                <img src={slide1} alt=""/>
+                                <img src={slide2} alt=""/>
+                                <img src={slide3} alt=""/>
+                                <img src={slide4} alt=""/>
+                                <img src={slide5} alt=""/>
+                            </Slider>
+                            <a href={slide.link} target={"_blank"} className={styles.PortfolioPage_seeBtn}>Смотреть</a>
+                        </div>
+                        <div className={styles.PortfolioPage_content}>
+                            <h2 className={styles.PortfolioPage_title}>{slide.title}</h2>
+                            <div className={styles.PortfolioPage_info}>
+                                <p>
+                                    {slide.descr}
+                                </p>
 
-                        <ul className={styles.examples}>
-                            <li className={styles.example}>
-                                <img src="https://2ch.hk//hw/src/3277376/15446283802060.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="http://alergyia.ru/wp-content/uploads/2016/12/9-4.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://scrapclub.com.ua/wp-content/uploads/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt_.1900.1.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://www.usmagazine.com/wp-content/uploads/2018/06/Smoothie-the-Cat-Instagram-zoom.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a_400x400.jpeg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://www.economist.com/sites/default/files/20171216_BKP511_0.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://images.pexels.com/photos/326875/pexels-photo-326875.jpeg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg"  className={styles.image} alt=""/>
-                            </li>
-                            <li className={styles.example}>
-                                <img src="https://www.thesprucepets.com/thmb/qPHlAlsuW6QfqCSmJA3pXg8PNYA=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/185939148-56a111b03df78cafdaa914ed.jpg"  className={styles.image} alt=""/>
-                            </li>
-                        </ul>
+                                <div className={styles.PortfolioPage_techologies}>
+                                    <p>
+                                        Технологии: {slide.technologies}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </PageContainer>
             </PagesWrapper>

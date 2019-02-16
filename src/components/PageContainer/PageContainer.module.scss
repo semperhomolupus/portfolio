@@ -32,12 +32,11 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 150px;
-  margin-right: 100px;
+  margin-right: 30px;
   flex-shrink: 0;
 
   @media (min-width: 1440px) {
     width: 200px;
-    margin-right: 80px;
   }
 }
 
@@ -132,8 +131,8 @@
 .haiku_img {
   display: block;
   position: absolute;
-  bottom: -10px;
-  right: -90px;
+  top: -140px;
+  left: 10px;
 }
 
 .content {

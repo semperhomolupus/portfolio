@@ -9,9 +9,7 @@ import "slick-carousel/slick/slick-theme.scss";
 
 import slide1 from './assets/slide-1.jpg';
 import slide2 from './assets/slide-2.jpg';
-import slide3 from './assets/slide-3.jpg';
-import slide4 from './assets/slide-4.jpg';
-import slide5 from './assets/slide-5.jpg';
+import slide3 from './assets/slide-3.png';
 
 export default class PortfolioPage extends Component {
     constructor(props) {
@@ -50,22 +48,10 @@ export default class PortfolioPage extends Component {
                 technologies: "CSS"
             },
             {
-                title: "Сайт компании Panakeia",
-                descr: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda deserunt distinctio eaque itaque molestias nam necessitatibus quas recusandae repellat, sunt totam vel voluptas voluptates voluptatibus!",
-                link: "",
-                technologies: "ХЗ"
-            },
-            {
-                title: "Многостраничный сайт Афродита",
-                descr: "Сайт вымышленного фитнес-клуба. Псс, только не говорите им, что их не существует ;)",
-                link: "",
-                technologies: "HTML"
-            },
-            {
-                title: "Лендинг компании Lorem",
-                descr: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda deserunt distinctio eaque itaque molestias nam necessitatibus quas recusandae repellat, sunt totam vel voluptas voluptates voluptatibus! Amet delectus et quam.",
-                link: "https://semperhomolupus.github.io/loremSite/",
-                technologies: "HTML, jQuery"
+                title: "Лендинг франшизы Recordfit",
+                descr: "С целой тонной разнообразных анимаций, сделанных библиотекой WOW.js.",
+                link: "http://franchise.recordfit.ru/",
+                technologies: "PUG, LESS, jQuery"
             }
         ];
 
@@ -84,8 +70,6 @@ export default class PortfolioPage extends Component {
                                 <img src={slide1} alt=""/>
                                 <img src={slide2} alt=""/>
                                 <img src={slide3} alt=""/>
-                                <img src={slide4} alt=""/>
-                                <img src={slide5} alt=""/>
                             </Slider>
                             <a href={slide.link} target={"_blank"} className={styles.PortfolioPage_seeBtn}>Смотреть</a>
                         </div>

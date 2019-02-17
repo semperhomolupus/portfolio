@@ -50,6 +50,10 @@
   outline: none;
   cursor: pointer;
 
+  &:hover span {
+    color: #7daec9;
+  }
+
   div  {
     display: block;
     width: 45px;
@@ -73,15 +77,29 @@
     color: #fff;
     white-space: nowrap;
     right: 70px;
-    top: 5px;
+    top: 8px;
     transition: 0.3s;
 
-    &:hover {
-      color: #7daec9;
-    }
+
   }
 
   @media (min-width: 1440px) {
     right: 95px;
+  }
+}
+
+.audioActive {
+  display: block;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 45px;
+    background-color: red;
+    position: absolute;
+    top: 2px;
+    left: 24px;
+    transform: rotate(-45deg);
   }
 }

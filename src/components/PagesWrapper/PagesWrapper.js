@@ -1,11 +1,8 @@
 import React, {Component} from "react";
-
 import Navigation from "../Navigation/Navigation";
 import {Link} from 'react-router-dom';
-
 import song from './assets/sadtimes.mp3';
 import styles from './PagesWrapper.module.scss';
-
 
 export default class PagesWrapper extends Component {
     constructor(props) {
@@ -19,10 +16,7 @@ export default class PagesWrapper extends Component {
         this.audio.loop = true;
     }
 
-
-
     toggleAudio() {
-        console.dir(this.audio)
         this.audio.play();
         this.state.musicIsActive ? this.audio.pause() : this.audio.play();
         this.setState({
@@ -31,8 +25,18 @@ export default class PagesWrapper extends Component {
     }
 
     render() {
+        let audioText = "";
+        let audioStyles = "";
 
-        const audioText = this.state.musicIsActive ? "Остановить музыку" : "Включить музыку";
+        if (this.state.musicIsActive) {
+            audioText = "Остановить музыку";
+            audioStyles = `${styles.audio} ${styles.audioActive}`
+        } else {
+            audioText = "Включить музыку";
+            audioStyles = styles.audio;
+        }
+
+
 
         return (
             <div className={styles.pagesWrapper}>
@@ -43,7 +47,7 @@ export default class PagesWrapper extends Component {
                     <Navigation/>
                     <button
                         onClick={this.toggleAudio.bind(this)}
-                        className={styles.audio}>
+                        className={audioStyles}>
                         <span>{audioText}</span>
                         <div></div>
                     </button>
@@ -51,7 +55,6 @@ export default class PagesWrapper extends Component {
 
                 {this.props.children}
             </div>
-
         )
     }
 }

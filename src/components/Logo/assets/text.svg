@@ -9,7 +9,7 @@
     <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="textcircle" transform="rotate(19.9 50 50)"/>
 
 </defs>
-<text style="font-family: 'Poiret One', cursive;  font-size: 17px;"  dy="-11" textLength="250">
+<text  style="font-family: 'Poiret One', cursive;  font-size: 17px;"  dy="-11" textLength="130">
     <textPath xlink:href="#textcircle" stroke="#fff" >
            WOLF_FRONTEND
     </textPath>

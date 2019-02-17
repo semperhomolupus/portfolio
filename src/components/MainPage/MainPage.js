@@ -4,7 +4,7 @@ import Game from '../Game/Game';
 import IconNinja from '../IconNinja/IconNinja';
 import wasdImg from './assets/wasd.png';
 
-import PagesWrapper from '../PagesWrapper/PagesWrapper';
+import PagesWrapper from '../../containers/PagesContainer/PagesContainer';
 
 export default class MainPage extends Component {
 

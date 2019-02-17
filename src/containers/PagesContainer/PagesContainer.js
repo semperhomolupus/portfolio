@@ -1,42 +1,34 @@
 import React, {Component} from "react";
-import Navigation from "../Navigation/Navigation";
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {toggleMusic} from "../../actions/toggleMusic";
+import Navigation from "../../components/Navigation/Navigation";
 import song from './assets/sadtimes.mp3';
-import styles from './PagesWrapper.module.scss';
+import styles from './PagesContainer.module.scss';
 
-export default class PagesWrapper extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            musicIsActive: false
-        };
-
-        this.audio = new Audio();
-        this.audio.src = song;
-        this.audio.loop = true;
-    }
+class PagesContainer extends Component {
 
     toggleAudio() {
-        this.audio.play();
-        this.state.musicIsActive ? this.audio.pause() : this.audio.play();
-        this.setState({
-            musicIsActive: !this.state.musicIsActive
-        })
+        const {music, musicIsActive} = this.props.audio;
+        music.src = song;
+        music.loop = true;
+        musicIsActive ? music.pause() : music.play();
+        const newMusicStatus = !musicIsActive;
+        this.props.toggleMusicAction(newMusicStatus);
     }
 
     render() {
+        const {musicIsActive} = this.props.audio;
         let audioText = "";
         let audioStyles = "";
 
-        if (this.state.musicIsActive) {
+        if (musicIsActive) {
             audioText = "Остановить музыку";
             audioStyles = `${styles.audio} ${styles.audioActive}`
         } else {
             audioText = "Включить музыку";
             audioStyles = styles.audio;
         }
-
-
 
         return (
             <div className={styles.pagesWrapper}>
@@ -58,3 +50,18 @@ export default class PagesWrapper extends Component {
         )
     }
 }
+
+
+const mapStateToProps = (store) => {
+    return {
+        audio: store.audio
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleMusicAction: musicIsActive => dispatch(toggleMusic(musicIsActive))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PagesContainer)

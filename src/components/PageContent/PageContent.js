@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-import styles from './PageContainer.module.scss';
+import propTypes from 'prop-types';
 import IconNinja from "../IconNinja/IconNinja";
 import {Link} from "react-router-dom";
 import imageType1 from './assets/1.png';
 import imageType2 from './assets/2.png';
 import imageType3 from './assets/3.png';
+import styles from './PageContent.module.scss';
 
-export default class PageContainer extends Component {
+export default class PageContent extends Component {
 
     render() {
         let image;
@@ -44,30 +45,35 @@ export default class PageContainer extends Component {
         }
 
         return (
-                <div className={styles.container}>
-                    <aside className={styles.aside}>
-                        <div className={styles.ninja}>
-                            <IconNinja/>
-                            <Link to={'/main'} className={styles.return}>« Вернуться</Link>
-                        </div>
-                        <div className={styles.haiku}>
-                            {text}
-                            <img className={styles.haiku_img} src={image} alt=""/>
-                        </div>
-                    </aside>
+            <div className={styles.container}>
+                <aside className={styles.aside}>
+                    <div className={styles.ninja}>
+                        <IconNinja/>
+                        <Link to={'/main'} className={styles.return}>« Вернуться</Link>
+                    </div>
+                    <div className={styles.haiku}>
+                        {text}
+                        <img className={styles.haiku_img} src={image} alt=""/>
+                    </div>
+                </aside>
 
-                    <main className={styles.content}>
-                        <h1 className={styles.title}>{this.props.title}</h1>
-                        <div className={styles.content_wrapper}>
-                            {this.props.children}
-                        </div>
-                        <div className={styles.copyright}>
-                            From Saint-Petersburg with love  <br/>
-                            Egor Dyachenko, 2019
-                        </div>
-                    </main>
-
-                </div>
+                <main className={styles.content}>
+                    <h1 className={styles.title}>{this.props.title}</h1>
+                    <div className={styles.content_wrapper}>
+                        {this.props.children}
+                    </div>
+                    <div className={styles.copyright}>
+                        From Saint-Petersburg with love  <br/>
+                        Egor Dyachenko, 2019
+                    </div>
+                </main>
+            </div>
         )
     }
+}
+
+PageContent.propTypes = {
+    children: propTypes.node.isRequired,
+    title: propTypes.string.isRequired,
+    haikuType: propTypes.number.isRequired
 }

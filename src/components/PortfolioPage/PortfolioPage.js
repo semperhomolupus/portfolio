@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import PagesWrapper from "../PagesWrapper/PagesWrapper";
-import PageContainer from "../PageContainer/PageContainer";
+import PagesWrapper from "../../containers/PagesContainer/PagesContainer";
+import PageContent from "../PageContent/PageContent";
 import styles from './PortfolioPage.module.scss';
 
 import Slider from "react-slick";
@@ -60,7 +60,7 @@ export default class PortfolioPage extends Component {
 
         return (
             <PagesWrapper>
-                <PageContainer
+                <PageContent
                     haikuType={2}
                     title={'Мое хобби, моя работа'}
                 >
@@ -88,7 +88,7 @@ export default class PortfolioPage extends Component {
                             </div>
                         </div>
                     </div>
-                </PageContainer>
+                </PageContent>
             </PagesWrapper>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import PagesWrapper from "../PagesWrapper/PagesWrapper";
-import PageContainer from "../PageContainer/PageContainer";
+import PagesWrapper from "../../containers/PagesContainer/PagesContainer";
+import PageContent from "../PageContent/PageContent";
 
 
 import styles from './ContactsPage.module.scss';
@@ -12,7 +12,7 @@ export default class ContactsPage extends Component {
 
         return (
             <PagesWrapper>
-                <PageContainer
+                <PageContent
                     haikuType={3}
                     title={'Интересно? Напишите'}
                 >
@@ -55,7 +55,7 @@ export default class ContactsPage extends Component {
 
                         </div>
                     </div>
-                </PageContainer>
+                </PageContent>
             </PagesWrapper>
         )
     }

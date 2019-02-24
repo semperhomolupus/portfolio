@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {connect} from 'react-redux';
 import WelcomePage from '../../components/WelcomePage/WelcomePage';
 import MainPage from '../../components/MainPage/MainPage';
 import PortfolioPage from '../../components/PortfolioPage/PortfolioPage';
@@ -8,7 +7,7 @@ import AboutPage from '../../components/AboutPage/AboutPage';
 import ContactsPage from '../../components/ContactsPage/ContactsPage';
 import styles from './App.module.scss'
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return (
             <div className={styles.App}>
@@ -25,11 +24,3 @@ class App extends Component {
         )
     }
 }
-
-const mapStateToProps = (store) => {
-    return {
-        user: store.user
-    }
-}
-
-export default connect(mapStateToProps)(App)

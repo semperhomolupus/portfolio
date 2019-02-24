@@ -8,6 +8,7 @@
   background-image: url("./assets/background.jpg");
   -webkit-background-size: cover;
   background-size: cover;
+
 }
 
 .header {
@@ -31,7 +32,7 @@
   transition: 0.3s;
 
   &:hover {
-    color: #7daec9;
+    color: #9a5252;
   }
 
   @media (min-width: 1440px) {
@@ -51,7 +52,7 @@
   cursor: pointer;
 
   &:hover span {
-    color: #7daec9;
+    color: #d3b67a;
   }
 
   div  {
@@ -64,7 +65,7 @@
     background-color: #fff;
     background-position: center center;
     font-size: 0;
-    border: 2px solid #7daec9;
+    border: 2px solid #9a5252;
     border-radius: 50%;
   }
 
@@ -74,7 +75,7 @@
     position: absolute;
     font-family: 'Neucha', cursive;
     font-size: 20px;
-    color: #fff;
+    color: #ffffff;
     white-space: nowrap;
     right: 70px;
     top: 8px;

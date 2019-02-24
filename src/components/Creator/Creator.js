@@ -1695,7 +1695,11 @@ class Creator extends Component {
                 width: 20,
                 height: 10,
             },
-            activeType: "ничего"
+            checkedElemParams: {
+                type: "ничего",
+                object: null,
+                passable: true
+            }
         };
 
 
@@ -1754,19 +1758,23 @@ class Creator extends Component {
         })
     }
 
-    setActiveType(e) {
+    setActiveType(type, object, passable) {
+
         this.setState({
-            activeType: e.target.dataset.type
+            checkedElemParams: {
+                type: type,
+                object: object,
+                passable: passable
+            }
         })
     }
 
     changeField(e) {
-        console.dir(e.target.dataset)
         const posX = +e.target.dataset.x;
         const posY = +e.target.dataset.y;
-        let type = this.state.activeType;
+        const {type, object, passable} = this.state.checkedElemParams;
+
         let newLevel = this.state.level;
-        console.dir(posX, posY, type)
         let changedFieldIndex = 0;
         let changedField = {};
 
@@ -1781,7 +1789,8 @@ class Creator extends Component {
         });
 
         newLevel[changedFieldIndex].type = type;
-
+        newLevel[changedFieldIndex].object = object;
+        newLevel[changedFieldIndex].passable = passable;
 
         this.setState({
             level: newLevel
@@ -1789,7 +1798,7 @@ class Creator extends Component {
     }
 
     render() {
-        const {level, player, step, activeType} = this.state;
+        const {level, player, step, checkedElemParams} = this.state;
         let elements = [];
 
         level.forEach((field, index) => {
@@ -1854,7 +1863,7 @@ class Creator extends Component {
                                 <button
                                     data-type="wall"
                                     className={styles.wall}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "wall", null, false)}
                                 />
                             </li>
 
@@ -1862,7 +1871,7 @@ class Creator extends Component {
                                 <button
                                     data-type="tree"
                                     className={styles.tree}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "tree", null, false)}
                                 />
                             </li>
 
@@ -1870,7 +1879,7 @@ class Creator extends Component {
                                 <button
                                     data-type="flower"
                                     className={styles.flower}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "flower", null, true)}
                                 />
                             </li>
 
@@ -1878,7 +1887,7 @@ class Creator extends Component {
                                 <button
                                     data-type="sand"
                                     className={styles.sand}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "sand", null, true)}
                                 />
                             </li>
 
@@ -1886,7 +1895,7 @@ class Creator extends Component {
                                 <button
                                     data-type="river"
                                     className={styles.river}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "river", null, false)}
                                 />
                             </li>
 
@@ -1894,7 +1903,15 @@ class Creator extends Component {
                                 <button
                                     data-type="door"
                                     className={styles.door}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "door", null, false)}
+                                />
+                            </li>
+
+                            <li>
+                                <button
+                                    data-type="box"
+                                    className={styles.box}
+                                    onClick={this.setActiveType.bind(this, "box", null, false)}
                                 />
                             </li>
 
@@ -1902,7 +1919,7 @@ class Creator extends Component {
                                 <button
                                     data-type="exit"
                                     className={styles.exit}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, "", null, true)}
                                 />
                             </li>
                         </ul>
@@ -1912,11 +1929,11 @@ class Creator extends Component {
                                 <button
                                     data-type="keys"
                                     className={styles.keys}
-                                    onClick={this.setActiveType.bind(this)}
+                                    onClick={this.setActiveType.bind(this, null, "keys", true)}
                                 ></button>
                             </li>
                         </ul>
-                        <h2>Выбрано: {activeType}</h2>
+                        <h2>Выбрано: {checkedElemParams.type}</h2>
                     </div>
 
                     <div

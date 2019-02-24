@@ -5,6 +5,9 @@ import MainPage from '../../components/MainPage/MainPage';
 import PortfolioPage from '../../components/PortfolioPage/PortfolioPage';
 import AboutPage from '../../components/AboutPage/AboutPage';
 import ContactsPage from '../../components/ContactsPage/ContactsPage';
+
+
+import Creator from '../../components/Creator/Creator';
 import styles from './App.module.scss'
 
 export default class App extends Component {
@@ -18,6 +21,9 @@ export default class App extends Component {
                         <Route path={'/portfolio'} component={PortfolioPage}/>
                         <Route path={'/about'} component={AboutPage}/>
                         <Route path={'/contacts'} component={ContactsPage}/>
+
+
+                        <Route path={'/creator'} component={Creator}/>
                     </Switch>
                 </Router>
             </div>

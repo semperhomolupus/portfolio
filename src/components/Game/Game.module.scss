@@ -150,3 +150,58 @@
   background-position: center;
 }
 
+
+
+
+
+
+
+
+
+
+.creator {
+
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 100px;
+  color: #fff;
+}
+
+.creator_inputs {
+  display: block;
+
+  & > * {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.creator_elements {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.creator_elements_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+
+  li {
+    margin-right: 30px;
+
+    button {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}
+
+.creator_field {
+
+  &:hover {
+    filter: grayscale(70%)
+  }
+}

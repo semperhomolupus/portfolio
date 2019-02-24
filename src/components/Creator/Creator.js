@@ -1861,7 +1861,6 @@ class Creator extends Component {
                         <ul className={styles.creator_elements_list}>
                             <li>
                                 <button
-                                    data-type="wall"
                                     className={styles.wall}
                                     onClick={this.setActiveType.bind(this, "wall", null, false)}
                                 />
@@ -1869,7 +1868,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="tree"
                                     className={styles.tree}
                                     onClick={this.setActiveType.bind(this, "tree", null, false)}
                                 />
@@ -1877,7 +1875,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="flower"
                                     className={styles.flower}
                                     onClick={this.setActiveType.bind(this, "flower", null, true)}
                                 />
@@ -1885,7 +1882,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="sand"
                                     className={styles.sand}
                                     onClick={this.setActiveType.bind(this, "sand", null, true)}
                                 />
@@ -1893,7 +1889,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="river"
                                     className={styles.river}
                                     onClick={this.setActiveType.bind(this, "river", null, false)}
                                 />
@@ -1901,7 +1896,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="door"
                                     className={styles.door}
                                     onClick={this.setActiveType.bind(this, "door", null, false)}
                                 />
@@ -1909,7 +1903,6 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="box"
                                     className={styles.box}
                                     onClick={this.setActiveType.bind(this, "box", null, false)}
                                 />
@@ -1917,9 +1910,14 @@ class Creator extends Component {
 
                             <li>
                                 <button
-                                    data-type="exit"
                                     className={styles.exit}
-                                    onClick={this.setActiveType.bind(this, "", null, true)}
+                                    onClick={this.setActiveType.bind(this, "exit", null, true)}
+                                />
+                            </li>
+                            <li>
+                                <button
+                                    className={styles.field}
+                                    onClick={this.setActiveType.bind(this, null, null, true)}
                                 />
                             </li>
                         </ul>
@@ -1949,6 +1947,8 @@ class Creator extends Component {
 
         let levtl =  JSON.stringify(this.state.level)
 
+        console.log(levtl)
+
         return (
 
             <PagesWrapper>
@@ -1958,9 +1958,7 @@ class Creator extends Component {
 
                 </div>
 
-                <div>
-                    {levtl}
-                </div>
+
             </PagesWrapper>
         )
     }

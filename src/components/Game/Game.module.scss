@@ -62,6 +62,10 @@
 }
 
 .boat {
+  background-image: url("./assets/river.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #51b8c7;
   position: relative;
 
   &::after {
@@ -204,4 +208,8 @@
   &:hover {
     filter: grayscale(70%)
   }
+}
+.code {
+  font-size: 3px;
+  color: #fff;
 }

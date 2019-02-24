@@ -1,13 +1,15 @@
 .wrapper {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #5c9c46;
 }
 
-.table {
-  border-collapse: collapse;
-}
 
-td {
+
+.field {
   width: 30px;
   height: 30px;
   padding: 0;
@@ -33,7 +35,7 @@ td {
   background-color: #686351;
 }
 
-.key {
+.keys {
   background-image: url("./assets/key.png"), url("./assets/ground.jpg");
   background-size: 80%, cover;
   background-repeat: no-repeat;

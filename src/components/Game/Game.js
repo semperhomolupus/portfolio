@@ -1,18 +1,1711 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
-import './Game.scss'
+import styles from './Game.module.scss'
 
 class Game extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            player: {
-                row: 0,
-                column: 0,
+            levelSize: {
+                width: 20,
+                height: 10,
             },
-            key: false
-        }
+
+            fieldSize: {
+                width: 40,
+                height: 40,
+            },
+
+            player: {
+                positionX: 5,
+                positionY: 5
+            },
+
+            inventory: {
+                keys: 0
+            },
+
+            level: [
+                {
+                    x: 1,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 3,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 4,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 5,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 6,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 7,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 8,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 9,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 10,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 11,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 12,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 13,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 14,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 15,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 16,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 17,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 18,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 19,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 20,
+                    y: 1,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 2,
+                    type: "tree",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 3,
+                    y: 2,
+                    type: "flower",
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 6,
+                    y: 2,
+                    type: "tree",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 7,
+                    y: 2,
+                    type: "tree",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 8,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 9,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 12,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 2,
+                    type: "flower",
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 2,
+                    type: "box",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 15,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 16,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 2,
+                    type: "tree",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 19,
+                    y: 2,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 2,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 3,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 3,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 3,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 4,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 4,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 4,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 5,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 5,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 5,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 6,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+                {
+                    x: 2,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 6,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 6,
+                    type: "wall",
+                    object: null,
+                    passable: false
+                },
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 2,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 7,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 2,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 8,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 2,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y: 9,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    x: 1,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 2,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 3,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 4,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 5,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 6,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 7,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 8,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 9,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 10,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 11,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 12,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 13,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 14,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 15,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 16,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 17,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 18,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 19,
+                    y: 10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+
+                {
+                    x: 20,
+                    y:  10,
+                    type: null,
+                    object: null,
+                    passable: true
+                },
+            ]
+        };
 
         this.keyListener = this.keyListener.bind(this);
         this.movePlayer = this.movePlayer.bind(this);
@@ -20,234 +1713,201 @@ class Game extends Component {
     }
 
     componentDidMount(){
-        console.log("GAME componentDidMount")
         document.addEventListener("keydown", this.keyListener, false);
-        const player = document.querySelector(".player");
-        const playerRow = player.dataset.row;
-        const playerColumn = player.dataset.column;
-
-        this.setState({
-            player: {
-                row: +playerRow,
-                column: +playerColumn
-            }
-        });
     }
 
     componentWillUnmount() {
-        console.log("GAME componentWillUnmount")
         document.removeEventListener("keydown", this.keyListener);
     }
 
     keyListener(e) {
         const keyCode = e.code;
+        let {positionY, positionX} = this.state.player;
 
         if (keyCode === "KeyW" || keyCode === "ArrowUp") {
-            this.movePlayer(+this.state.player.row - 1, false);
-        } else if (keyCode === "KeyS" || keyCode === "ArrowDown") {
-            this.movePlayer(+this.state.player.row + 1, false);
-        } else if (keyCode === "KeyD" || keyCode === "ArrowRight") {
-            this.movePlayer(false, +this.state.player.column + 1);
-        } else if (keyCode === "KeyA" || keyCode === "ArrowLeft") {
-            this.movePlayer(false, +this.state.player.column - 1);
-        }
+            this.movePlayer(
+                positionX,
+                --positionY,
+            );
 
+        } else if (keyCode === "KeyS" || keyCode === "ArrowDown") {
+            this.movePlayer(
+                positionX,
+                ++positionY,
+            );
+
+        } else if (keyCode === "KeyA" || keyCode === "ArrowLeft") {
+            this.movePlayer(
+                --positionX,
+                positionY
+
+            );
+
+        } else if (keyCode === "KeyD" || keyCode === "ArrowRight") {
+            this.movePlayer(
+                ++positionX,
+                positionY
+
+            );
+
+        }
     }
 
-    movePlayer(row, column) {
+    movePlayer(newPositionX, newPositionY) {
+        const {level} = this.state;
 
-        let newRowPosition = row !== false ? row : this.state.player.row;
-        let newColumnPosition = column !== false ? column : this.state.player.column;
-        let player = document.querySelector('.player');
-        let tiles = document.querySelectorAll('td');
-        let newPlace;
-        console.log(newRowPosition, newColumnPosition)
-        for (let i = 0; i < tiles.length; i++) {
+        let nextFieldIndex = 0;
+        let nextField = null;
 
-            if (+tiles[i].dataset.row === newRowPosition && +tiles[i].dataset.column === +newColumnPosition) {
-                newPlace = tiles[i];
+        level.forEach((item, index) => {
+            if (
+                item.y === newPositionY &&
+                item.x === newPositionX
+            ) {
+                nextFieldIndex= index;
+                nextField = item;
             }
-        }
-        // Говнокод
-        if (newPlace.classList.contains("disabled") || newPlace.classList.contains("door")) {
-            console.log("Сюда нельзя")
+        });
+
+        if (nextField) {
+            this.ckeckNewPlace(nextField, nextFieldIndex, newPositionX, newPositionY)
         } else {
-            newPlace.classList.add("player")
-            player.classList.remove("player");
+            console.log("Некуда идти")
+        }
+    }
+
+        // Говнокод
+    //     if (newPlace.classList.contains("key")) {
+    //         let door = document.querySelector('.door');
+    //         newPlace.classList.remove("key")
+    //         door.classList.remove("door")
+    //     }
+    //
+    //     if (newPlace.classList.contains("aboutGate")) {
+    //         this.props.history.push('/about')
+    //     }
+    //
+    //     if (newPlace.classList.contains("portfolioGate")) {
+    //         this.props.history.push('/portfolio')
+    //     }
+    //
+    //     if (newPlace.classList.contains("contactsGate")) {
+    //         this.props.history.push('/contacts')
+    //     }
+    //
+    // }
+
+
+    ckeckNewPlace(nextField, nextFieldIndex, nextFieldX, nextFieldY) {
+        const fieldItem = nextField.object;
+        const fieldSpecialType = nextField.type;
+        const canMove = nextField.passable;
+        let {level, inventory: {keys}} = this.state;
+        let newLevel = level;
+
+
+        if (fieldItem !== null) {
+            newLevel[nextFieldIndex].object = null;
+
+            this.setState({
+                level: newLevel,
+                player: {
+                    positionX: nextFieldX,
+                    positionY: nextFieldY,
+                },
+                inventory: {
+                    [fieldItem]: ++this.state.inventory[fieldItem]
+                }
+            })
+
+
+
+
+        } else if (fieldSpecialType === "door" && keys > 0) {
+            newLevel[nextFieldIndex].type = null;
+            newLevel[nextFieldIndex].passable = true;
+
+            this.setState({
+                level: newLevel,
+                player: {
+                    positionX: nextFieldX,
+                    positionY: nextFieldY,
+                },
+                inventory: {
+                    keys: --keys
+                }
+            })
+
+
+        } else if (canMove) {
             this.setState({
                 player: {
-                    row: newRowPosition,
-                    column: newColumnPosition
+                    positionX: nextFieldX,
+                    positionY: nextFieldY,
                 }
+            })
+
+        } else {
+            console.log('Сюда нельзя!')
+        }
+    }
+
+//
+// ████████A███████████
+// █TF.█TT█..█.F.B█.T.█
+// P...║.F..███.F.║...C
+// █F..█..........█B.F█
+// █..B█..F..T███.█████
+// ███████....╘█T...FB█
+// █T..B███..███..FT.B█
+// RSS☺..F.....F......█
+// R۩SS...T.TT....B█╘T█
+// RRRR████████████████
+
+        render() {
+            const {level, player} = this.state;
+            let elements = [];
+
+            level.forEach((field, index) => {
+                const fielsBaseClass = styles.field;
+                const fieldTypeClass = styles[field.type];
+                const fieldObjectClass = styles[field.object];
+                let playerClass = null;
+
+                if (field.x === player.positionX && field.y === player.positionY)  {
+                    playerClass = styles.player;
+                }
+
+                const fieldFinalClass = `${fielsBaseClass} ${fieldTypeClass} ${fieldObjectClass} ${playerClass}`;
+
+                elements.push(
+                    <div
+                        key={index}
+                        className={fieldFinalClass}
+                        data-x={field.x}
+                        data-y={field.y}
+                        data-passible={field.passable}
+                    />
+                )
             });
-        }
-        // Говнокод
-        if (newPlace.classList.contains("key")) {
-            let door = document.querySelector('.door');
-            newPlace.classList.remove("key")
-            door.classList.remove("door")
-        }
 
-        if (newPlace.classList.contains("aboutGate")) {
-            this.props.history.push('/about')
-        }
+            const levelWidth = this.state.levelSize.width * 40 + "px";
+            const levelHeight = this.state.levelSize.height * 40 + "px";
 
-        if (newPlace.classList.contains("portfolioGate")) {
-            this.props.history.push('/portfolio')
-        }
+            let wrapperStyles  = {
+                width: levelWidth,
+                height: levelHeight
+            };
 
-        if (newPlace.classList.contains("contactsGate")) {
-            this.props.history.push('/contacts')
-        }
-
-    }
-
-    render() {
-        const level = `
-████████A███████████
-█TF.█TT█..█.F.B█.T.█
-P...║.F..███.F.║...C
-█F..█..........█B.F█
-█..B█..F..T███.█████
-███████....╘█T...FB█
-█T..B███..███..FT.B█
-RSS☺..F.....F......█
-R۩SS...T.TT....B█╘T█
-RRRR████████████████
-`
-
-        const transformedString = [];
-
-        for (let i = 0; i < level.length; i++) {
-            transformedString.push(level[i])
-        }
-
-        let rows = [];
-        let row = [];
-        let dataRow = 0;
-        let dataColumn = 0;
-
-        transformedString.forEach((symbol, index) => {
-
-            if (symbol !== '\n') {
-                let className;
-                switch (symbol) {
-                    case "█":
-                        className = "wall disabled";
-                        break;
-                    case "☺":
-                        className = "player";
-                        break;
-                    case "╘":
-                        className = "key";
-                        break;
-                    case "▼":
-                        className = "exit";
-                        break;
-                    case "║":
-                        className = "door";
-                        break;
-                    case "A":
-                        className = "aboutGate";
-                        break;
-                    case "P":
-                        className = "portfolioGate";
-                        break;
-                    case "C":
-                        className = "contactsGate";
-                        break;
-
-                    case "B":
-                        className = "box disabled";
-                        break;
-                    case "T":
-                        className = "tree disabled";
-                        break;
-
-                    case "F":
-                        className = "flower ";
-                        break;
-                    case "R":
-                        className = "river disabled";
-                        break;
-                    case "۩":
-                        className = "boat river disabled";
-                        break;
-                    case "S":
-                        className = "sand";
-                        break;
-
-
-
-                    default:
-                        className = "floor";
-
-
-
-                    // case "█":
-                    //     className = `${styles.wall}`;
-                    //     break;
-                    // case "@":
-                    //     className = `${styles.player}`;
-                    //     break;
-                    // case "╘":
-                    //     className = `${styles.key}`;
-                    //     break;
-                    // case "▼":
-                    //     className = `${styles.exit}`;
-                    //     break;
-                    // case "║":
-                    //     className = `${styles.door}`;
-                    //     break;
-                    // default:
-                    //     className = `${styles.floor}`;
-                }
-
-                row.push(<td
-                    key={index}
-                    className={className}
-                    data-column={dataColumn++}
-                    data-row={dataRow}
-                >{symbol}</td>)
-
-            } else {
-                rows.push(row)
-                row = [];
-                dataColumn = 0;
-                dataRow++;
-            }
-
-        })
-
-        let generatedLevel = rows.map((row, index) => {
             return (
-                <tr key={index}>
-                    {row}
-                </tr>
-            )
-        })
-
-
-
-
-
-        // const getlevel = getRows.map((row, index) => {
-        //   return <tr key={index}>{row}</tr>
-        // })
-
-        // console.log(getlevel)
-
-        return (
-            <div className="wrapper">
-
-                <table className="table">
-                    <tbody>
-                    {generatedLevel}
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
+                <div
+                    className={styles.wrapper}
+                    style={wrapperStyles}
+                >
+                    {elements}
+                </div>
+            );
+        }
 }
 
 

@@ -129,7 +129,7 @@ class Game extends Component {
 
         if (fieldItem !== null) {
             newLevel[nextFieldIndex].object = null;
-
+            let inventoryItemCount = this.state.inventory[fieldItem];
             this.setState({
                 level: newLevel,
                 player: {
@@ -137,11 +137,9 @@ class Game extends Component {
                     positionY: nextFieldY,
                 },
                 inventory: {
-                    [fieldItem]: ++this.state.inventory[fieldItem]
+                    [fieldItem]: ++inventoryItemCount
                 }
             })
-
-
 
 
         } else if (fieldSpecialType === "door" && keys > 0) {

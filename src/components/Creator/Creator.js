@@ -1753,8 +1753,9 @@ class Creator extends Component {
     }
 
     nextStep() {
+        let step = this.state.step;
         this.setState({
-            step: ++this.state.step
+            step: ++step
         })
     }
 
@@ -1772,19 +1773,14 @@ class Creator extends Component {
     changeField(e) {
         const posX = +e.target.dataset.x;
         const posY = +e.target.dataset.y;
-        const {type, object, passable} = this.state.checkedElemParams;
+        const {checkedElemParams: {type, object, passable},  level} = this.state;
 
         let newLevel = this.state.level;
         let changedFieldIndex = 0;
-        let changedField = {};
 
-        this.state.level.forEach((item, index) => {
-            if (
-                item.y === posY &&
-                item.x === posX
-            ) {
+        level.forEach((item, index) => {
+            if (item.y === posY && item.x === posX) {
                 changedFieldIndex= index;
-                changedField = item;
             }
         });
 

@@ -80,35 +80,12 @@ class Game extends Component {
         }
     }
 
-        // Говнокод
-    //     if (newPlace.classList.contains("key")) {
-    //         let door = document.querySelector('.door');
-    //         newPlace.classList.remove("key")
-    //         door.classList.remove("door")
-    //     }
-    //
-    //     if (newPlace.classList.contains("aboutGate")) {
-    //         this.props.history.push('/about')
-    //     }
-    //
-    //     if (newPlace.classList.contains("portfolioGate")) {
-    //         this.props.history.push('/portfolio')
-    //     }
-    //
-    //     if (newPlace.classList.contains("contactsGate")) {
-    //         this.props.history.push('/contacts')
-    //     }
-    //
-    // }
-
-
     ckeckNewPlace(nextField, nextFieldIndex, nextFieldX, nextFieldY) {
         const fieldItem = nextField.object;
         const fieldSpecialType = nextField.type;
         const canMove = nextField.passable;
         let {level, inventory: {keys}} = this.props.game;
         let newLevel = level;
-
 
         if (fieldItem !== null) {
             newLevel[nextFieldIndex].object = null;
@@ -125,8 +102,14 @@ class Game extends Component {
                 }
             })
 
+        } else if (fieldSpecialType === "aboutGate") {
+            this.props.history.push('/about')
 
+        } else if (fieldSpecialType === "portfolioGate") {
+            this.props.history.push('/portfolio')
 
+        } else if (fieldSpecialType === "contactsGate") {
+            this.props.history.push('/contacts')
 
         } else if (fieldSpecialType === "door" && keys > 0) {
             newLevel[nextFieldIndex].type = null;
@@ -158,60 +141,54 @@ class Game extends Component {
         }
     }
 
-//
-// ████████A███████████
-// █TF.█TT█..█.F.B█.T.█
-// P...║.F..███.F.║...C
-// █F..█..........█B.F█
-// █..B█..F..T███.█████
-// ███████....╘█T...FB█
-// █T..B███..███..FT.B█
-// RSS☺..F.....F......█
-// R۩SS...T.TT....B█╘T█
-// RRRR████████████████
+    render() {
+        const {level, player, levelSize, inventory} = this.props.game;
+        let elements = [];
 
-        render() {
+        level.forEach((field, index) => {
+            const fielsBaseClass = styles.field;
+            const fieldTypeClass = styles[field.type] || '';
+            const fieldObjectClass = styles[field.object] || '';
+            let playerClass = '';
 
-            const {level, player, levelSize} = this.props.game;
-            let elements = [];
+            if (field.x === player.positionX && field.y === player.positionY)  {
+                playerClass = styles.player;
+            }
 
-            level.forEach((field, index) => {
-                const fielsBaseClass = styles.field;
-                const fieldTypeClass = styles[field.type];
-                const fieldObjectClass = styles[field.object];
-                let playerClass = null;
+            const fieldFinalClass = `${fielsBaseClass} ${fieldTypeClass} ${fieldObjectClass} ${playerClass}`;
 
-                if (field.x === player.positionX && field.y === player.positionY)  {
-                    playerClass = styles.player;
-                }
+            elements.push(
+                <div
+                    key={index}
+                    className={fieldFinalClass}
+                />
+            )
+        });
 
-                const fieldFinalClass = `${fielsBaseClass} ${fieldTypeClass} ${fieldObjectClass} ${playerClass}`;
+        const levelWidth = levelSize.width * 40 + "px";
+        const levelHeight = levelSize.height * 40 + "px";
 
-                elements.push(
-                    <div
-                        key={index}
-                        className={fieldFinalClass}
-                    />
-                )
-            });
+        let wrapperStyles  = {
+            width: levelWidth,
+            height: levelHeight
+        };
 
-            const levelWidth = levelSize.width * 40 + "px";
-            const levelHeight = levelSize.height * 40 + "px";
-
-            let wrapperStyles  = {
-                width: levelWidth,
-                height: levelHeight
-            };
-
-            return (
+        return (
+            <React.Fragment>
                 <div
                     className={styles.wrapper}
                     style={wrapperStyles}
                 >
                     {elements}
+
+
                 </div>
-            );
-        }
+                <div className={styles.keysCounter}>
+                    Количество ключей:
+                    <span>{inventory.keys}</span></div>
+            </React.Fragment>
+        );
+    }
 }
 
 

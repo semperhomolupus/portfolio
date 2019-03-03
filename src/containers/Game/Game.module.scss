@@ -5,9 +5,24 @@
   justify-content: flex-start;
   align-items: flex-start;
   background-color: #5c9c46;
+  position: relative;
 }
 
+.keysCounter {
+  display: block;
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Neucha', cursive;
+  font-size: 20px;
+  color: #ffffff;
 
+  span {
+    padding-left: 10px;
+    color: #d3b67a;
+  }
+}
 
 .field {
   width: 30px;

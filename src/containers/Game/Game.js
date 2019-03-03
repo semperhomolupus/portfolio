@@ -101,17 +101,21 @@ class Game extends Component {
                     [fieldItem]: ++inventoryItemCount
                 }
             })
+        }
 
-        } else if (fieldSpecialType === "aboutGate") {
+        else if (fieldSpecialType === "aboutGate") {
             this.props.history.push('/about')
+        }
 
-        } else if (fieldSpecialType === "portfolioGate") {
+        else if (fieldSpecialType === "portfolioGate") {
             this.props.history.push('/portfolio')
+        }
 
-        } else if (fieldSpecialType === "contactsGate") {
+        else if (fieldSpecialType === "contactsGate") {
             this.props.history.push('/contacts')
+        }
 
-        } else if (fieldSpecialType === "door" && keys > 0) {
+        else if (fieldSpecialType === "door" && keys > 0) {
             newLevel[nextFieldIndex].type = null;
             newLevel[nextFieldIndex].passable = true;
 
@@ -125,18 +129,18 @@ class Game extends Component {
                     keys: --keys
                 }
             })
+        }
 
-
-        } else if (canMove) {
-            console.log(this.props.game)
+        else if (canMove) {
             this.props.gameSaver({
                 player: {
                     positionX: nextFieldX,
                     positionY: nextFieldY,
                 }
             })
+        }
 
-        } else {
+        else {
             console.log('Сюда нельзя!')
         }
     }

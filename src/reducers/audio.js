@@ -8,7 +8,7 @@ export const initialState = {
 export function audioReducer(state = initialState, action) {
     switch (action.type) {
         case TOGGLE_MUSIC:
-            return {...state, musicIsActive: action.payload}
+            return {...state, musicIsActive: action.payload};
 
         default:
             return state

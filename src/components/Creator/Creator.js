@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import PagesWrapper from '../../containers/PagesContainer/PagesContainer';
-import styles from '../Game/Game.module.scss';
+import styles from '../../containers/Game/Game.module.scss';
 
 
 class Creator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            step: 2,
+            step: 1,
             level: [
                 {
                     x: 1,
@@ -1702,16 +1702,12 @@ class Creator extends Component {
             }
         };
 
-
         this.setLevelSize = this.setLevelSize.bind(this)
-
     }
 
     setLevelSize(e) {
         const type = e.target.dataset.type;
         const value = +e.target.value;
-
-
 
         this.setState({
             levelSize: {
@@ -1760,7 +1756,6 @@ class Creator extends Component {
     }
 
     setActiveType(type, object, passable) {
-
         this.setState({
             checkedElemParams: {
                 type: type,
@@ -1790,7 +1785,9 @@ class Creator extends Component {
 
         this.setState({
             level: newLevel
-        })
+        });
+
+        console.log(JSON.stringify(newLevel))
     }
 
     render() {
@@ -1801,8 +1798,8 @@ class Creator extends Component {
             const fielsBaseClass = `${styles.field} ${styles.creator_field}`;
             const fieldTypeClass = styles[field.type];
             const fieldObjectClass = styles[field.object];
-            let playerClass = null;
 
+            let playerClass = null;
             if (field.x === player.positionX && field.y === player.positionY)  {
                 playerClass = styles.player;
             }
@@ -1820,8 +1817,6 @@ class Creator extends Component {
                 />
             )
         });
-
-
 
         const levelWidth = this.state.levelSize.width * 40 + "px";
         const levelHeight = this.state.levelSize.height * 40 + "px";
@@ -1851,7 +1846,7 @@ class Creator extends Component {
             )
         } else if (step === 2) {
             content = (
-                <div >
+                <div>
                     <div className={styles.creator_elements}>
                         <h2>Тип поля:</h2>
                         <ul className={styles.creator_elements_list}>
@@ -1941,20 +1936,11 @@ class Creator extends Component {
             )
         }
 
-        let levtl =  JSON.stringify(this.state.level)
-
-        console.log(levtl)
-
         return (
-
             <PagesWrapper>
                 <div className={styles.creator}>
                     {content}
-
-
                 </div>
-
-
             </PagesWrapper>
         )
     }

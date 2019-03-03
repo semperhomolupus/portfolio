@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styles from './MainPage.module.scss'
-import Game from '../Game/Game';
+import Game from '../../containers/Game/Game';
 import IconNinja from '../IconNinja/IconNinja';
 import wasdImg from './assets/wasd.png';
 
